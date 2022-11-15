@@ -33,7 +33,7 @@ session_start();
 			<br>
 			<a href="login.php">
 				E-Voting
-				<b>Pemilu Raya Ormawa FTI</b>
+				<b>Pemilu Raya Ormawa FTI UNISKA</b>
 			</a>
 		</div>
 		<!-- /.login-logo -->
@@ -43,7 +43,7 @@ session_start();
 
 				<form action="" method="post">
 					<div class="input-group mb-3">
-						<input type="text" class="form-control" name="username" placeholder="Username" required>
+						<input type="text" class="form-control" name="username" placeholder="Username/NIM" required>
 						<div class="input-group-append">
 							<div class="input-group-text">
 								<span class="fas fa-user"></span>
@@ -204,7 +204,7 @@ if (isset($_POST['btnLogin'])) {
 		} else {
 
 
-			if ((($hasil["success"] == true) and ($hasil['data']["userid"] == "19630674")) or (($hasil["success"] == true) and ($hasil['data']["userid"] == "19630280"))) {
+			if ((($hasil["success"] == true) and ($hasil['data']["userid"] == "19630674"))) {
 				$_SESSION["ses_id"] = $hasil['data']["userid"];
 				$_SESSION["ses_username"] = $hasil['data']["username"];
 				$_SESSION["ses_name"] = $hasil['data']["nama"];
@@ -214,7 +214,7 @@ if (isset($_POST['btnLogin'])) {
 			}).then((result) => {if (result.value)
 				{window.location = 'landing_admin.php';}
 			})</script>";
-			} elseif ((($hasil["success"] == true) and !($hasil['data']["userid"] == "19630674")) or (($hasil["success"] == true) and !($hasil['data']["userid"] == "19630280"))) {
+			} elseif ((($hasil["success"] == true) and !($hasil['data']["userid"] == "19630674"))) {
 				$_SESSION["ses_id"] = $hasil['data']["userid"];
 				$_SESSION["ses_username"] = $hasil['data']["username"];
 				$_SESSION["ses_name"] = $hasil['data']["nama"];
@@ -247,7 +247,7 @@ if (isset($_POST['btnLogin'])) {
 	if ($hasil['success'] !== false) {
 		if ((strpos($hasil['data']['userid'], '1963') !== false) and ($hasil['data']['kode_prodi'] == '55201')) {
 			Login($koneksi, $hasil, 'Teknik Informatika');
-		} elseif ((strpos($hasil['data']['userid'], '1863') !== false) and ($hasil['data']['kode_prodi'] == '55201')) {
+		} elseif ((strpos($hasil['data']['userid'], '221001') !== false) and ($hasil['data']['kode_prodi'] == '55201')) {
 			Login($koneksi, $hasil, 'Teknik Informatika');
 		} elseif ((strpos($hasil['data']['userid'], '201001') !== false) and ($hasil['data']['kode_prodi'] == '55201')) {
 			Login($koneksi, $hasil, 'Teknik Informatika');
@@ -255,25 +255,29 @@ if (isset($_POST['btnLogin'])) {
 			Login($koneksi, $hasil, 'Teknik Informatika');
 		} elseif ((strpos($hasil['data']['userid'], '1971') !== false) and ($hasil['data']['kode_prodi'] == '57201')) {
 			Login($koneksi, $hasil, 'Sistem Informasi');
-		} elseif ((strpos($hasil['data']['userid'], '1871') !== false) and ($hasil['data']['kode_prodi'] == '57201')) {
+		} elseif ((strpos($hasil['data']['userid'], '221002') !== false) and ($hasil['data']['kode_prodi'] == '57201')) {
 			Login($koneksi, $hasil, 'Sistem Informasi');
 		} elseif ((strpos($hasil['data']['userid'], '201002') !== false) and ($hasil['data']['kode_prodi'] == '57201')) {
 			Login($koneksi, $hasil, 'Sistem Informasi');
 		} elseif ((strpos($hasil['data']['userid'], '211002') !== false) and ($hasil['data']['kode_prodi'] == '57201')) {
 			Login($koneksi, $hasil, 'Sistem Informasi');
 		} else {
-			echo "<script>
+			echo "
+			<script>
 				Swal.fire({title: 'Maaf Anda Bukan Peserta Pemilih',text: '',icon: 'error',confirmButtonText: 'OK'
 				}).then((result) => {if (result.value)
 					{window.location = 'login';}
-				})</script>";
+				})
+			</script>";
 		}
 	} else {
-		echo "<script>
+		echo "
+			<script>
 				Swal.fire({title: 'Password atau Username Tidak Ada',text: '',icon: 'error',confirmButtonText: 'OK'
 				}).then((result) => {if (result.value)
 					{window.location = 'login';}
-				})</script>";
+				})
+			</script>";
 	}
 }
 

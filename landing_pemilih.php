@@ -127,7 +127,7 @@ include "inc/rupiah.php";
 				</a>
 				All rights reserved.
 			</div>
-			Create 2021
+			KPU FTI UNISKA 2022
 		</footer>
 
 		<!-- Control Sidebar -->

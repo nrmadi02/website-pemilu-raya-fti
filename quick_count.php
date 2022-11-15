@@ -65,6 +65,7 @@ $hmpsi_paslon2 = (int)$hmpsi2[0];
     <script type="text/javascript" src="https://www.amcharts.com/lib/3/themes/chalk.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
     <!-- amCharts javascript code -->
     <script type="text/javascript">
         AmCharts.makeChart("chartBem", {
